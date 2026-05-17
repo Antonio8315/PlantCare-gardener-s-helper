@@ -46,7 +46,7 @@ function App() {
     if (otherSymptom) finalSymptoms.push(otherSymptom);
 
     try {
-      const response = await axios.post('http://localhost:5001/api/diseases/diagnose', {
+      const response = await axios.post(`${API_URL}/api/diseases/diagnose`, {
         plantName,
         symptoms: finalSymptoms
       });
