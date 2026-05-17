@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Search, Leaf, AlertCircle, CheckCircle2 } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+
 function App() {
   const [plantName, setPlantName] = useState('');
   const [selectedSymptoms, setSelectedSymptoms] = useState([]);
