@@ -10,17 +10,15 @@ function App() {
   const [otherSymptom, setOtherSymptom] = useState('');
   const [result, setResult] = useState(null);
 
-  // Тимчасові дані для розробки (потім замінимо на запити до БД)
-  //const allPlants = ["Томат", "Огірок", "Яблуня", "Троянда", "Фікус"];
   const commonSymptoms = ["Пожовтіння листя", "Білий наліт", "Плями на плодах", "Плями на листі", "В'ялість", "Закручування листя", "Дірки в листі", "Почорніння стебла біля кореню"];
 
-  const [allPlants, setAllPlants] = useState([]); // Тепер це пустий масив спочатку
+  const [allPlants, setAllPlants] = useState([]);
 
   useEffect(() => {
     const fetchPlants = async () => {
       try {
         const response = await axios.get(`${API_URL}/api/diseases/plants`);
-        setAllPlants(response.data); // Отримуємо ["Томат", "Огірок", "Роза"] з бази
+        setAllPlants(response.data);
       } catch (error) {
         console.error("Не вдалося завантажити список рослин", error);
       }
@@ -38,7 +36,7 @@ function App() {
 
   const handleDiagnose = async (e) => {
     e.preventDefault();
-    setResult(null); // Очищуємо старий результат
+    setResult(null);
 
     if (!plantName || (selectedSymptoms.length === 0 && !otherSymptom)) {
       alert("Будь ласка, вкажіть рослину та хоча б один симптом");
@@ -96,6 +94,7 @@ function App() {
                   border: '1px solid',
                   borderColor: selectedSymptoms.includes(s) ? '#28a745' : '#ddd',
                   background: selectedSymptoms.includes(s) ? '#eaffef' : '#fff',
+                  color: '#333',
                   cursor: 'pointer',
                   fontSize: '14px',
                   display: 'flex',
@@ -159,9 +158,9 @@ function App() {
                 </span>
               </div>
 
-              <p style={{ color: '#666', marginTop: '10px' }}>{disease.description}</p>
+              <p style={{ color: '#000000', marginTop: '10px' }}>{disease.description}</p>
 
-              <div style={{ marginTop: '15px', padding: '10px', backgroundColor: '#f9f9f9', borderRadius: '6px' }}>
+              <div style={{ marginTop: '15px', padding: '10px', backgroundColor: '#f9f9f9', color: '#000000', borderRadius: '6px' }}>
                 <strong>Лікування:</strong> {disease.treatment}
               </div>
             </div>

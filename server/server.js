@@ -14,7 +14,7 @@ const app = express();
 
 // Middlewares
 app.use(cors());
-app.use(express.json()); // Щоб сервер розумів JSON-дані в запитах
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('API працює, база підключена!');
