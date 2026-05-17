@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="container" style={{ maxWidth: '600px', margin: '40px auto', padding: '20px', fontFamily: 'system-ui' }}>
       <h1 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2d5a27' }}>
-        <Leaf size={32} /> PlantCare AI
+        <Leaf size={32} /> Gardener's Helper
       </h1>
 
       <form onSubmit={handleDiagnose} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
