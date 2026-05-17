@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     const fetchPlants = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/api/diseases/plants');
+        const response = await axios.get(`${API_URL}/api/diseases/plants`);
         setAllPlants(response.data); // Отримуємо ["Томат", "Огірок", "Роза"] з бази
       } catch (error) {
         console.error("Не вдалося завантажити список рослин", error);
