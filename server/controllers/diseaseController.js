@@ -39,7 +39,6 @@ exports.diagnosePlant = async (req, res) => {
   }
 };
 
-
 exports.getPlants = async (req, res) => {
   try {
     const plants = await Disease.distinct("plants");

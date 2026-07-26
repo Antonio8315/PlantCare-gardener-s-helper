@@ -1,3 +1,7 @@
+if (!globalThis.crypto) {
+    globalThis.crypto = require('crypto');
+}
+
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
